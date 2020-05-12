@@ -127,6 +127,22 @@ OUTPUT:
     - "Survey not found", if the survey name is unknown
     - "Survey Question not found", if the question is unknown for this survey
 
+Class: 
+
+1. Survey:
+
+    - name, string
+    - questions, string array
+    - responses, SurveyResponse array
+
+2. SurveyResponse:
+
+    - user, int
+    - answer, string array
+
+3. Controller:
+
+    - surveyList, Survey array
 
 ## Unit testing and Test-Driven development
 
