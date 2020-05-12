@@ -99,3 +99,15 @@ def test_add_response():
     assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 2
     assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
     assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[1] == 4
+
+    MySurveys.CreateSurvey("Survey Test 12")
+    assert MySurveys.AddQuestion("Survey Test 12", "This is a question for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 12").questions) == 1
+
+    assert MySurveys.AddResponse("Survey Test 12", 2, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[1] == 4
+    assert len(MySurveys.GetSurvey("Survey Test 12").responses[0].answer) == 1
+    assert MySurveys.GetSurvey("Survey Test 12").responses[0].answer[0] == 2
