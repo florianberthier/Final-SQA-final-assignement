@@ -156,6 +156,38 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 ## Test Coverage Metric
 
+Test coverage is a measure used to determine the rate of source code executed when a test suite is run. In an attempt to limit bugs, tests should cover a large proportion of code. It can show which parts of your code are being exercised by tests, and which are not. Pour ce projet, la couverture de test est mesurée avec l'outil python **Coverage.py**. Let's start by seeing how this tool works:
+
+For installation, you will need the python [**pip**](https://pypi.org/project/pip/) package manager. I leave it to you to install it if you haven't already done so.
+
+1. Install coverage.py:
+```
+    pip install coverage
+```
+
+2. Use coverage run to run your test suite and gather data. However you normally run your test suite, you can run your test runner under coverage. In our case, we use py.test to run our tests, the command to run is therefore :
+```
+    coverage run -m py.test
+```
+![Coverage Screenshot](./images/coverage_run.png)
+
+3. Once the data has been retrieved by the coverage tool, all we have to do is display it with:
+```
+    coverage report -m
+````
+![Coverage Screenshot](./images/coverage_report.png)
+
+4. The tool also gives us the possibility to display the parts of our code that might not be covered by our tests:
+
+```
+    coverage html
+```
+Then just go to the htmlcov folder. There you will find several html representations of the test coverage of your code. If you go to the main.py file, you will be able to see your code as well as the parts covered by the tests.
+
+![Coverage Html](./images/coverage_html.png)
+
+In our case, the code is quite simple and it's not difficult to have 100% test coverage. Sometimes it can be difficult or even impossible to wait for this figure. The tests depend on your code, it doesn't matter if you don't have 100% test coverage, it should be as high as possible for your code. 
+
 ## Team version-control
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
