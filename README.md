@@ -177,6 +177,15 @@ For installation, you will need the python [**pip**](https://pypi.org/project/pi
 ````
 ![Coverage Screenshot](./images/coverage_report.png)
 
+4. The tool also gives us the possibility to display the parts of our code that might not be covered by our tests:
+
+```
+    coverage html
+```
+Then just go to the htmlcov folder. There you will find several html representations of the test coverage of your code. If you go to the main.py file, you will be able to see your code as well as the parts covered by the tests.
+
+![Coverage Html](./images/coverage_html.png)
+
 ## Team version-control
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
