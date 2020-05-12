@@ -14,3 +14,13 @@ class Survey:
 class Controller:
     def __init__(self):
         self.surveyList = []
+
+    def CreateSurvey(self, surveyName):
+        self.surveyList.append(Survey(surveyName))
+        return None
+
+    def GetSurvey(self, surveyName):
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                return survey
+        return "Survey not found"
