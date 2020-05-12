@@ -1,4 +1,30 @@
-from statistics import stdev 
+from statistics import stdev
+
+def GetSurveyStatistics(survey):
+    result = dict()
+    total = 0
+    size = 0
+    minVal = 10
+    maxVal = 0
+    scores = []
+
+    for response in survey.responses:
+        score = 0
+        for answer in response.answer:
+            score = score + answer
+        if score > maxVal:
+            maxVal = score
+        if score < minVal:
+            minVal = score
+        total = total + score
+        size = size + 1
+        scores.append(score)
+
+    result["stand_dev"] = stdev(scores)
+    result["average"] = total / size
+    result["min"] = minVal
+    result["max"] = maxVal
+    return result
 
 class SurveyResponse:
     def __init__(self, user):
