@@ -82,5 +82,7 @@ Once again, the challenge of a project is above all teamwork. You must be able t
     git push origin [branch-name]
 ```
 
+4. Finally, to submit your final work, you must make a pull request on the dev branch. Make sure you are up to date on the latest version. You can then go to the github interface and request a pull request on the dev branch. This pull request will then be reviewed and validated by an admin.
+
 ## Code-review checklist
 
