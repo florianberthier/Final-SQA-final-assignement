@@ -72,3 +72,18 @@ def test_add_response():
     assert MySurveys.AddResponse("Survey Test 11", "invalid response", firstUser) == "Invalid answer"
     assert MySurveys.AddResponse("Survey Test 11", 10, firstUser) == "Invalid answer"
     assert MySurveys.AddResponse("Survey Test 11", 0, firstUser) == "Invalid answer"
+    assert MySurveys.AddQuestion("Survey Test 11", "This is a question for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").questions) == 1
+
+    assert MySurveys.AddResponse("Unknow Survey 2", 4, firstUser) == "Survey not found"
+    assert MySurveys.AddResponse("Survey Test 11", 4, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 1
+    assert MySurveys.GetSurvey("Survey Test 11").responses[0].answer[0] == 4
+    assert MySurveys.AddResponse("Survey Test 11", 4, firstUser) == "No question for this answer"
+
+    assert MySurveys.AddQuestion("Survey Test 11", "This is a question 2 for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").questions) == 2
+
+    assert MySurveys.AddResponse("Survey Test 11", 1, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[0].answer[1] == 1
