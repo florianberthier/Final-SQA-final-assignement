@@ -106,3 +106,8 @@ It is sometimes difficult to work with github in the beginning. You may have dif
 - Documentation
     - [ ] All methods are commented in clear language.
     - [ ] Comments exist and describe rationale or reasons for decisions in code
+
+- Security
+    - [ ] All data inputs are checked (for the correct type, length/size, format, and range)
+    - [ ] Invalid parameter values handled such that exceptions are not thrown
+    - [ ] No sensitive information is logged or visible in a stacktrace
