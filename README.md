@@ -64,5 +64,10 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
 
+1. The creation of the git **branch**. It is very constraining to develop on code that is modified by others at the same time. To avoid this, each developer must create a git branch for each task assigned to him. The branch must be created from the last update of the Dev branch. The name of the branch must include the name of the developer as well as the name of the task to be performed. This task name must be the same as the one marked on its sprint map. To create a branch, just type :
+```
+    git checkout -b [branch-name]
+```
+
 ## Code-review checklist
 
