@@ -45,3 +45,19 @@ def test_add_question():
     assert MySurveys.AddQuestion("Survey Test 9", "This is a question 2") == None
     assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 2
     assert MySurveys.GetSurvey("Survey Test 9").questions[1] == "This is a question 2"
+    assert MySurveys.AddQuestion("Unknow Survey", "This is a question") == "Survey not found"
+    MySurveys.CreateSurvey("Survey Test 10")
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question for survey 2") == None
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 10").questions) == 1
+    assert MySurveys.GetSurvey("Survey Test 10").questions[0] == "This is a question for survey 2"
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 10 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 101 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 102 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 103 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 104 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 105 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 106 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 107 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 108 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 109 for survey 10") == "Limit of 10 questions reached"
