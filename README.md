@@ -22,6 +22,8 @@ Today's software applications are increasingly complex, often operating in multi
 
 ## Unit testing and Test-Driven development
 
+Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers.
+
 ## Test Coverage Metric
 
 ## Team version-control
