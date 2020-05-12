@@ -84,5 +84,7 @@ Once again, the challenge of a project is above all teamwork. You must be able t
 
 4. Finally, to submit your final work, you must make a pull request on the dev branch. Make sure you are up to date on the latest version. You can then go to the github interface and request a pull request on the dev branch. This pull request will then be reviewed and validated by an admin.
 
+It is sometimes difficult to work with github in the beginning. You may have difficulty distinguishing the notion of branch or to see the progress of a project. Try to see a branch as a version of the project. Several tools can also help you to use github. For example, [GitKraken](https://www.gitkraken.com/) is a very good tool for managing github. I'll let you learn more about it if you're interested.
+
 ## Code-review checklist
 
