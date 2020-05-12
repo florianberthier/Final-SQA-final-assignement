@@ -62,5 +62,29 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 ## Team version-control
 
+Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
+
+1. The creation of the git **branch**. It is very constraining to develop on code that is modified by others at the same time. To avoid this, each developer must create a git branch for each task assigned to him. The branch must be created from the last update of the Dev branch. The name of the branch must include the name of the developer as well as the name of the task to be performed. This task name must be the same as the one marked on its sprint map. To create a branch, just type :
+```
+    git checkout -b [branch-name]
+```
+
+2. Once the task is finished or you want to submit a progress, you must first of all retrieve the code that's on the dev branch. Other developers have also advanced on their tasks. So you have to get the latest version of the dev branch. To do this you must type the command: 
+```
+    git pull origin dev
+```
+
+3. Once you are up to date on the latest version of the dev branch, you can push your work on your branch. For the commit message, you must take the name of your task from your sprint as well as the added features. Here are the commands to type to submit your work:
+
+```
+    git add [files to add]
+    git commit -m "[commit message]"
+    git push origin [branch-name]
+```
+
+4. Finally, to submit your final work, you must make a pull request on the dev branch. Make sure you are up to date on the latest version. You can then go to the github interface and request a pull request on the dev branch. This pull request will then be reviewed and validated by an admin.
+
+It is sometimes difficult to work with github in the beginning. You may have difficulty distinguishing the notion of branch or to see the progress of a project. Try to see a branch as a version of the project. Several tools can also help you to use github. For example, [GitKraken](https://www.gitkraken.com/) is a very good tool for managing github. I'll let you learn more about it if you're interested.
+
 ## Code-review checklist
 
