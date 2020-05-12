@@ -165,6 +165,12 @@ For installation, you will need the python [**pip**](https://pypi.org/project/pi
     pip install coverage
 ```
 
+2. Use coverage run to run your test suite and gather data. However you normally run your test suite, you can run your test runner under coverage. In our case, we use py.test to run our tests, the command to run is therefore :
+```
+    coverage run -m py.test
+```
+![Coverage Screenshot](./images/coverage_run.png)
+
 ## Team version-control
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
