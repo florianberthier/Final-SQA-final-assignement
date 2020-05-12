@@ -94,6 +94,18 @@ OUTPUT:
     - "Question already exist if this survey", if the question is already associated to this survey
     - "Limit of 10 questions reached", if the survey's question limit is reached (10 questions)
 
+- **AddResponse, add a response to a specific survey**. You can add responses to your survey via the AddResponse function by sending it the name of the survey and the response. The response must be a number between 1 and 5. You cannot add answers if there are no questions in your survey. You also need to send a user ID to be able to differentiate the answers between each person:
+```
+    MySurveys.AddResponse("My new survey name", 2[response], 1[userID])
+```
+
+OUTPUT:
+
+    - None, if it works
+    - "Survey not found", if the survey name is unknown
+    - "No question for this answer", if there are less questions than response for this user
+    - "Invalid answer", if the answer is not valid (between 1 and 5)
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
