@@ -186,6 +186,8 @@ Then just go to the htmlcov folder. There you will find several html representat
 
 ![Coverage Html](./images/coverage_html.png)
 
+In our case, the code is quite simple and it's not difficult to have 100% test coverage. Sometimes it can be difficult or even impossible to wait for this figure. The tests depend on your code, it doesn't matter if you don't have 100% test coverage, it should be as high as possible for your code. 
+
 ## Team version-control
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
