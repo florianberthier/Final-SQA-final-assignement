@@ -18,6 +18,34 @@ Today's software applications are increasingly complex, often operating in multi
 
 ## Sprint backlog and task estimation
 
+1. Project structure
+Imagine and create the structure of the project with all the classes and variables that will have to be present for the project. Time: **2 hours**.
+
+2. Create a survey
+Create the survey creation method. Of course, like every other part, you have to integrate the tests. Time: **25 min**.
+
+3. Get a survey
+Retrieve a survey by sending the name of the survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
+
+4. Get all surveys
+Retrieve all survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
+
+5. Add a question to a survey
+Add a question to a survey by sending the name of the survey and the question. No more than 10 questions per survey. Of course, like every other part, you have to integrate the tests. Time: **40 min**.
+
+6. Add a response to a survey
+Add a response to a survey by sending the name of the survey, the response and a userID.  It should not be possible to add an answer if there is no associated question. The answer must be a number between 1 and 5. Answers must be stored in relation to the user ID. Of course, like every other part, you have to integrate the tests. Time: **60 min**.
+
+7. Get a survey statistics
+Calculate and return the statistics of a survey. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **35 min**.
+
+8. Get a question statistics
+Calculate and return the statistics of a survey question. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **20 min**.
+
+Estimating the duration of a task can be difficult. In the case of this project, the first task is one that will require more reflection than the others. The challenge of this task is to think carefully about the structure of the project and to code a solid foundation. The time allowed may seem long, but it is time to save for the next tasks. It is better to spend more time thinking and less time coding. Contrary to this task, the next 3 tasks should not take too much time. It is simply a matter of returning known values. However, you have to take into account the time needed to create the tests. The last two tasks have a different time estimation because we will be able to reuse the code from the last but one task in the last one.
+
+One of the interesting metrics to calculate in scrum is velocity metrics. Velocity refers to the average amount of work a Scrum team performs during a sprint. Measured in story points or hours, it is very useful for forecasting. It is important to monitor the evolution of velocity over time. New teams can expect this velocity to increase as relationships and work processes are optimized. Existing teams can monitor their velocity to ensure consistency of performance over time and check whether or not a particular process change has led to improvements. A drop in average velocity is usually a sign that part of the team's development process has become inefficient and should be addressed in the next review. Thus, in the next sprint, improvements can be made to re-increase this metric. Velocity is unique for each team. If team A has a velocity of 50 and team B has a velocity of 75, it does not mean that team B has a higher velocity. The velocity is therefore only used to compare with yourself. 
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
