@@ -116,6 +116,18 @@ OUTPUT:
     - Object of statistics, if it works (max, min, average, stand_dev)
     - "Survey not found", if the survey name is unknown
 
+- **GetSurveyQuestionStat, get the survey's statistics**. You can retrieve the statistics of a specific question in a survey by using the GetSurveyQuestionStat function and sending it the name of the survey and the question. The statistics include the min score, max score, average score and standard deviation of the scores. A score is the response of the question by the user: 
+```
+    myQuestionStat = MySurveys.GetSurveyQuestionStat("My new survey name", "My question")
+```
+
+OUTPUT:
+
+    - Object of statistics, if it works (max, min, average, stand_dev)
+    - "Survey not found", if the survey name is unknown
+    - "Survey Question not found", if the question is unknown for this survey
+
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
