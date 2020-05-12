@@ -88,3 +88,26 @@ It is sometimes difficult to work with github in the beginning. You may have dif
 
 ## Code-review checklist
 
+1. General
+    - [ ] The code works
+    - [ ] The code is easy to understand
+    - [ ] Follows coding conventions
+    - [ ] Functions are simple and if possible short
+    - [ ] Functions are spelt correctly
+    - [ ] Names contain units where applicable
+    - [ ] All class, variable, and method modifiers are correct.
+    - [ ] There is no commented out code
+    - [ ] There is no dead code (inaccessible at Runtime)
+    - [ ] Debugging code is absent
+    - [ ] Code is not repeated or duplicated
+    - [ ] Ideal data structures are used
+    - [ ] No memory leaks
+
+- Documentation
+    - [ ] All methods are commented in clear language.
+    - [ ] Comments exist and describe rationale or reasons for decisions in code
+
+- Security
+    - [ ] All data inputs are checked (for the correct type, length/size, format, and range)
+    - [ ] Invalid parameter values handled such that exceptions are not thrown
+    - [ ] No sensitive information is logged or visible in a stacktrace
