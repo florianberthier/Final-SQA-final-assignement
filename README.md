@@ -48,6 +48,102 @@ One of the interesting metrics to calculate in scrum is velocity metrics. Veloci
 
 ## Project Documentation
 
+All the functionalities of the project are achievable via the Controller class. The Controller class consists of 7 functions. To be able to use this class, it must first be initialized:
+```
+    MySurveys = Controller()
+```
+You can then call up the available functions of the controller via this new variable.
+
+- **CreateSurvey, create a new survey**. You have the possibility to create several surveys. To do this you must call the CreateSurvey function:
+```
+    MySurveys.CreateSurvey("My new survey name")
+```
+
+OUTPUT:
+
+    - None, if it works
+
+- **GetSurveys, get the list of all created surveys**. You can also retrieve all created surveys via the GetSurveys function:
+```
+    allMySurveys = MySurveys.GetSurveys()
+```
+
+OUTPUT:
+
+    - Array of Class Survey
+
+- **GetSurvey, get a specific survey**. You can also retrieve a specific survey via the GetSurvey function by sending it the name of the survey you want to retrieve:
+```
+    mySurvey = MySurveys.GetSurvey("My new survey name")
+```
+
+OUTPUT:
+
+    - Class Survey, if it works
+    - "Survey not found", if the survey name is unknown
+
+- **AddQuestion, add a question to a specific survey**. You can add questions to your survey via the AddQuestion function by sending it the name of the survey and the question. A survey is limited to a maximum of 10 questions:
+```
+    MySurveys.AddQuestion("My new survey name", "My question")
+```
+
+OUTPUT:
+
+    - None, if it works
+    - "Survey not found", if the survey name is unknown
+    - "Question already exist if this survey", if the question is already associated to this survey
+    - "Limit of 10 questions reached", if the survey's question limit is reached (10 questions)
+
+- **AddResponse, add a response to a specific survey**. You can add responses to your survey via the AddResponse function by sending it the name of the survey and the response. The response must be a number between 1 and 5. You cannot add answers if there are no questions in your survey. You also need to send a user ID to be able to differentiate the answers between each person:
+```
+    MySurveys.AddResponse("My new survey name", 2[response], 1[userID])
+```
+
+OUTPUT:
+
+    - None, if it works
+    - "Survey not found", if the survey name is unknown
+    - "No question for this answer", if there are less questions than response for this user
+    - "Invalid answer", if the answer is not valid (between 1 and 5)
+
+- **GetSurveyStat, get the survey's statistics**. You can retrieve the statistics of a specific survey by using the GetSurveyStat function and sending it the name of the survey. The statistics include the min score, max score, average score and standard deviation of the scores. A survey score is obtained by summing all the responses of a user: 
+```
+    mySurveyStat = MySurveys.GetSurveyStat("My new survey name")
+```
+
+OUTPUT:
+
+    - Object of statistics, if it works (max, min, average, stand_dev)
+    - "Survey not found", if the survey name is unknown
+
+- **GetSurveyQuestionStat, get the survey's statistics**. You can retrieve the statistics of a specific question in a survey by using the GetSurveyQuestionStat function and sending it the name of the survey and the question. The statistics include the min score, max score, average score and standard deviation of the scores. A score is the response of the question by the user: 
+```
+    myQuestionStat = MySurveys.GetSurveyQuestionStat("My new survey name", "My question")
+```
+
+OUTPUT:
+
+    - Object of statistics, if it works (max, min, average, stand_dev)
+    - "Survey not found", if the survey name is unknown
+    - "Survey Question not found", if the question is unknown for this survey
+
+Class: 
+
+1. Survey:
+
+    - name, string
+    - questions, string array
+    - responses, SurveyResponse array
+
+2. SurveyResponse:
+
+    - user, int
+    - answer, string array
+
+3. Controller:
+
+    - surveyList, Survey array
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
