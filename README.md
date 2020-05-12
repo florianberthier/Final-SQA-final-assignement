@@ -28,6 +28,8 @@ Testing is the basis of a successful project. It is imperative that you provide 
 ```
 If you get red after typing the command, it means that there is an error in the code or in the test. So it's up to you to debug the project. Once everything is green, then you can push your work.
 
+Test-Driven development is a development method that aims to reduce the anomalies of an application by encouraging frequent testing. You have to keep in mind that you are not alone on a project. It is therefore essential to push on your branch with each new addition. It is also very important to put the name of your test and project function in your commit before pushing.
+
 ## Test Coverage Metric
 
 ## Team version-control
