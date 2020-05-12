@@ -62,5 +62,7 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 ## Team version-control
 
+Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
+
 ## Code-review checklist
 
