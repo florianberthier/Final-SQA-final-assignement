@@ -21,6 +21,9 @@ Today's software applications are increasingly complex, often operating in multi
 1. Project structure
 Imagine and create the structure of the project with all the classes and variables that will have to be present for the project. Time: **2 hours**.
 
+2. Create a survey
+Create the survey creation method. Of course, like every other part, you have to integrate the tests. Time: **25 min**.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
