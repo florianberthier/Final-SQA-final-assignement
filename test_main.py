@@ -61,3 +61,14 @@ def test_add_question():
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 107 for survey 10") == None
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 108 for survey 10") == None
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 109 for survey 10") == "Limit of 10 questions reached"
+
+def test_add_response():
+    firstUser = 1
+    secondUser = 2
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test 11")
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 0
+    assert MySurveys.AddResponse("Survey Test 11", 2, firstUser) == "No question for this answer"
+    assert MySurveys.AddResponse("Survey Test 11", "invalid response", firstUser) == "Invalid answer"
+    assert MySurveys.AddResponse("Survey Test 11", 10, firstUser) == "Invalid answer"
+    assert MySurveys.AddResponse("Survey Test 11", 0, firstUser) == "Invalid answer"
