@@ -42,7 +42,7 @@ Calculate and return the statistics of a survey. The statistics include a min, m
 8. Get a question statistics
 Calculate and return the statistics of a survey question. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **20 min**.
 
-One of the interesting metrics to calculate in scrum is velocity metrics. Velocity refers to the average amount of work a Scrum team performs during a sprint. Measured in story points or hours, it is very useful for forecasting.
+One of the interesting metrics to calculate in scrum is velocity metrics. Velocity refers to the average amount of work a Scrum team performs during a sprint. Measured in story points or hours, it is very useful for forecasting. It is important to monitor the evolution of velocity over time. New teams can expect this velocity to increase as relationships and work processes are optimized. Existing teams can monitor their velocity to ensure consistency of performance over time and check whether or not a particular process change has led to improvements. A drop in average velocity is usually a sign that part of the team's development process has become inefficient and should be addressed in the next review. Thus, in the next sprint, improvements can be made to re-increase this metric. Velocity is unique for each team. If team A has a velocity of 50 and team B has a velocity of 75, it does not mean that team B has a higher velocity. The velocity is therefore only used to compare with yourself. 
 
 ## Project Documentation
 
