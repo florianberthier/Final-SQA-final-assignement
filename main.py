@@ -12,6 +12,11 @@ class Survey:
         self.responses = []
 
     def AddQuestion(self, question):
+        if len(self.questions) >= 10:
+            return "Limit of 10 questions reached"
+        for myQuestion in self.questions:
+            if myQuestion == question:
+                return "Question already exist if this survey"
         self.questions.append(question)
 
 class Controller:
