@@ -74,5 +74,13 @@ Once again, the challenge of a project is above all teamwork. You must be able t
     git pull origin dev
 ```
 
+3. Once you are up to date on the latest version of the dev branch, you can push your work on your branch. For the commit message, you must take the name of your task from your sprint as well as the added features. Here are the commands to type to submit your work:
+
+```
+    git add [files to add]
+    git commit -m "[commit message]"
+    git push origin [branch-name]
+```
+
 ## Code-review checklist
 
