@@ -87,3 +87,15 @@ def test_add_response():
     assert MySurveys.AddResponse("Survey Test 11", 1, firstUser) == None
     assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
     assert MySurveys.GetSurvey("Survey Test 11").responses[0].answer[1] == 1
+
+    assert MySurveys.AddResponse("Survey Test 11", 3, secondUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 1
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[0] == 3
+
+    assert MySurveys.AddResponse("Survey Test 11", 4, secondUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[1] == 4
