@@ -15,3 +15,16 @@ Today's software applications are increasingly complex, often operating in multi
 - [**Team version-control**](#team-version-control)
 
 - [**Code-review checklist**](#code-review-checklist)
+
+## Sprint backlog and task estimation
+
+## Project Documentation
+
+## Unit testing and Test-Driven development
+
+## Test Coverage Metric
+
+## Team version-control
+
+## Code-review checklist
+
