@@ -27,6 +27,9 @@ Create the survey creation method. Of course, like every other part, you have to
 3. Get a survey
 Retrieve a survey by sending the name of the survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
 
+4. Get all surveys
+Retrieve all survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
