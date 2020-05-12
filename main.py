@@ -27,3 +27,8 @@ class Controller:
 
     def GetSurveys(self):
         return self.surveyList
+
+    def AddQuestion(self, surveyName, question):
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                return survey.AddQuestion(question)
