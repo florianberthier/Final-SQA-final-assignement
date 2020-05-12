@@ -33,3 +33,31 @@ def test_get_surveys():
     MySurveys.CreateSurvey("Survey Test 6")
     surveys = MySurveys.GetSurveys()
     assert len(surveys) == 4
+
+def test_add_question():
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test 9")
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 0
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question") == None
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question") == "Question already exist if this survey"
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 1
+    assert MySurveys.GetSurvey("Survey Test 9").questions[0] == "This is a question"
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question 2") == None
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 2
+    assert MySurveys.GetSurvey("Survey Test 9").questions[1] == "This is a question 2"
+    assert MySurveys.AddQuestion("Unknow Survey", "This is a question") == "Survey not found"
+    MySurveys.CreateSurvey("Survey Test 10")
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question for survey 2") == None
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 10").questions) == 1
+    assert MySurveys.GetSurvey("Survey Test 10").questions[0] == "This is a question for survey 2"
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 10 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 101 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 102 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 103 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 104 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 105 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 106 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 107 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 108 for survey 10") == None
+    assert MySurveys.AddQuestion("Survey Test 10", "This is a question 109 for survey 10") == "Limit of 10 questions reached"
