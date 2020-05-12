@@ -28,6 +28,40 @@ def GetSurveyStatistics(survey):
         result["max"] = maxVal
     return result
 
+def GetSurveyQuestionStatistics(survey, position):
+    result = dict()
+    total = 0
+    size = 0
+    minVal = 10
+    maxVal = 0
+    scores = []
+
+    for response in survey.responses:
+        questionPos = 0
+        score = 0
+        for answer in response.answer:
+            if questionPos == position:
+                score = answer
+                break
+            questionPos = questionPos + 1
+        if score == 0:
+            continue
+        if score > maxVal:
+            maxVal = score
+        if score < minVal:
+            minVal = score
+        total = total + score
+        size = size + 1
+        scores.append(score)
+
+    if len(scores) > 1:
+        result["stand_dev"] = stdev(scores)
+    if size > 0:
+        result["average"] = total / size
+        result["min"] = minVal
+        result["max"] = maxVal
+    return result
+
 class SurveyResponse:
     def __init__(self, user):
         self.user = user
@@ -97,4 +131,16 @@ class Controller:
         for survey in self.surveyList:
             if survey.name == surveyName:
                 return GetSurveyStatistics(survey)
+        return "Survey not found"
+
+    def GetSurveyQuestionStat(self, surveyName, question):
+        position = 0
+
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                for surveyQuestion in survey.questions:
+                    if surveyQuestion == question:
+                        return GetSurveyQuestionStatistics(survey, position)
+                    position = position + 1
+                return "Survey Question not found"
         return "Survey not found"

@@ -159,3 +159,53 @@ def test_get_survey_stat():
     assert surveyStat["max"] == 6
     assert surveyStat["min"] == 6
     assert surveyStat["average"] == 6
+
+def test_get_survey_question_stat():
+    firstUser = 1
+    secondUser = 2
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test 14")
+    assert MySurveys.AddQuestion("Survey Test 14", "This is a question for survey 1") == None
+    assert MySurveys.AddQuestion("Survey Test 14", "This is a question 2 for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 14").questions) == 2
+
+    assert MySurveys.GetSurveyQuestionStat("Unknow Survey", "This is a question for survey 1") == "Survey not found"
+    assert MySurveys.GetSurveyQuestionStat("Survey Test 14", "Unknow question") == "Survey Question not found"
+
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question for survey 1")
+    assert questionStat == {}
+
+    assert MySurveys.AddResponse("Survey Test 14", 4, firstUser) == None
+    assert MySurveys.AddResponse("Survey Test 14", 5, firstUser) == None
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question for survey 1")
+    assert questionStat["max"] == 4
+    assert questionStat["min"] == 4
+    assert questionStat["average"] == 4
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question 2 for survey 1")
+    assert questionStat["max"] == 5
+    assert questionStat["min"] == 5
+    assert questionStat["average"] == 5
+
+    assert MySurveys.AddResponse("Survey Test 14", 2, secondUser) == None
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question 2 for survey 1")
+    assert questionStat["max"] == 5
+    assert questionStat["min"] == 5
+    assert questionStat["average"] == 5
+
+    assert MySurveys.AddResponse("Survey Test 14", 1, secondUser) == None
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question for survey 1")
+    assert questionStat["max"] == 4
+    assert questionStat["min"] == 2
+    assert questionStat["average"] == 3
+    assert questionStat["stand_dev"] == 1.4142135623730951
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question 2 for survey 1")
+    assert questionStat["max"] == 5
+    assert questionStat["min"] == 1
+    assert questionStat["average"] == 3
+    assert questionStat["stand_dev"] == 2.8284271247461903
