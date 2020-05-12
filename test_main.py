@@ -195,3 +195,17 @@ def test_get_survey_question_stat():
     assert questionStat["max"] == 5
     assert questionStat["min"] == 5
     assert questionStat["average"] == 5
+
+    assert MySurveys.AddResponse("Survey Test 14", 1, secondUser) == None
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question for survey 1")
+    assert questionStat["max"] == 4
+    assert questionStat["min"] == 2
+    assert questionStat["average"] == 3
+    assert questionStat["stand_dev"] == 1.4142135623730951
+
+    questionStat = MySurveys.GetSurveyQuestionStat("Survey Test 14", "This is a question 2 for survey 1")
+    assert questionStat["max"] == 5
+    assert questionStat["min"] == 1
+    assert questionStat["average"] == 3
+    assert questionStat["stand_dev"] == 2.8284271247461903
