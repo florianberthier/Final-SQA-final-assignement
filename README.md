@@ -102,3 +102,7 @@ It is sometimes difficult to work with github in the beginning. You may have dif
     - [ ] Code is not repeated or duplicated
     - [ ] Ideal data structures are used
     - [ ] No memory leaks
+
+- Documentation
+    - [ ] All methods are commented in clear language.
+    - [ ] Comments exist and describe rationale or reasons for decisions in code
