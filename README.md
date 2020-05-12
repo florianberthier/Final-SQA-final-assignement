@@ -42,6 +42,8 @@ Calculate and return the statistics of a survey. The statistics include a min, m
 8. Get a question statistics
 Calculate and return the statistics of a survey question. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **20 min**.
 
+One of the interesting metrics to calculate in scrum is velocity metrics. Velocity refers to the average amount of work a Scrum team performs during a sprint. Measured in story points or hours, it is very useful for forecasting.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
