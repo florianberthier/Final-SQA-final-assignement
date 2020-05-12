@@ -106,6 +106,16 @@ OUTPUT:
     - "No question for this answer", if there are less questions than response for this user
     - "Invalid answer", if the answer is not valid (between 1 and 5)
 
+- **GetSurveyStat, get the survey's statistics**. You can retrieve the statistics of a specific survey by using the GetSurveyStat function and sending it the name of the survey. The statistics include the min score, max score, average score and standard deviation of the scores. A survey score is obtained by summing all the responses of a user: 
+```
+    mySurveyStat = MySurveys.GetSurveyStat("My new survey name")
+```
+
+OUTPUT:
+
+    - Object of statistics, if it works (max, min, average, stand_dev)
+    - "Survey not found", if the survey name is unknown
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
