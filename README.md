@@ -158,6 +158,13 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 Test coverage is a measure used to determine the rate of source code executed when a test suite is run. In an attempt to limit bugs, tests should cover a large proportion of code. It can show which parts of your code are being exercised by tests, and which are not. Pour ce projet, la couverture de test est mesurée avec l'outil python **Coverage.py**. Let's start by seeing how this tool works:
 
+For installation, you will need the python [**pip**](https://pypi.org/project/pip/) package manager. I leave it to you to install it if you haven't already done so.
+
+1. Install coverage.py:
+```
+    pip install coverage
+```
+
 ## Team version-control
 
 Once again, the challenge of a project is above all teamwork. You must be able to work on your individual task while making sure that you don't interfere with other people assigned to the project. Git is a perfect tool for this. You need to follow a GitFlow process. A GitFlow process consists of several steps:
