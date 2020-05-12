@@ -36,6 +36,9 @@ Add a question to a survey by sending the name of the survey and the question. N
 6. Add a response to a survey
 Add a response to a survey by sending the name of the survey, the response and a userID.  It should not be possible to add an answer if there is no associated question. The answer must be a number between 1 and 5. Answers must be stored in relation to the user ID. Of course, like every other part, you have to integrate the tests. Time: **60 min**.
 
+7. Get a survey statistics
+Calculate and return the statistics of a survey. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **35 min**.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
