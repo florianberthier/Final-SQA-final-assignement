@@ -231,11 +231,14 @@ It is sometimes difficult to work with github in the beginning. You may have dif
     - [ ] Ideal data structures are used
     - [ ] No memory leaks
 
-- Documentation
+2. Documentation
     - [ ] All methods are commented in clear language.
     - [ ] Comments exist and describe rationale or reasons for decisions in code
 
-- Security
+3. Security
     - [ ] All data inputs are checked (for the correct type, length/size, format, and range)
     - [ ] Invalid parameter values handled such that exceptions are not thrown
     - [ ] No sensitive information is logged or visible in a stacktrace
+
+
+Credit: Florian Berthier D19124164
