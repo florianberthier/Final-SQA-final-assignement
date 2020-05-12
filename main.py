@@ -20,10 +20,12 @@ def GetSurveyStatistics(survey):
         size = size + 1
         scores.append(score)
 
-    result["stand_dev"] = stdev(scores)
-    result["average"] = total / size
-    result["min"] = minVal
-    result["max"] = maxVal
+    if len(scores) > 1:
+        result["stand_dev"] = stdev(scores)
+    if size > 0:
+        result["average"] = total / size
+        result["min"] = minVal
+        result["max"] = maxVal
     return result
 
 class SurveyResponse:
