@@ -6,6 +6,12 @@ class SurveyResponse:
         self.answer = []
     
     def AddAnswer(self, answer, nbQuestions):
+        if isinstance(answer, int) == False:
+            return "Invalid answer"
+        if answer < 1 or answer > 5:
+            return "Invalid answer"
+        if len(self.answer) + 1 > nbQuestions:
+            return "No question for this answer"
         self.answer.append(answer)
 
 class Survey:
