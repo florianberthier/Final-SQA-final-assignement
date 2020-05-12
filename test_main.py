@@ -33,3 +33,15 @@ def test_get_surveys():
     MySurveys.CreateSurvey("Survey Test 6")
     surveys = MySurveys.GetSurveys()
     assert len(surveys) == 4
+
+def test_add_question():
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test 9")
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 0
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question") == None
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question") == "Question already exist if this survey"
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 1
+    assert MySurveys.GetSurvey("Survey Test 9").questions[0] == "This is a question"
+    assert MySurveys.AddQuestion("Survey Test 9", "This is a question 2") == None
+    assert len(MySurveys.GetSurvey("Survey Test 9").questions) == 2
+    assert MySurveys.GetSurvey("Survey Test 9").questions[1] == "This is a question 2"
