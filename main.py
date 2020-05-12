@@ -11,6 +11,9 @@ class Survey:
         self.questions = []
         self.responses = []
 
+    def AddQuestion(self, question):
+        self.questions.append(question)
+
 class Controller:
     def __init__(self):
         self.surveyList = []
@@ -32,3 +35,4 @@ class Controller:
         for survey in self.surveyList:
             if survey.name == surveyName:
                 return survey.AddQuestion(question)
+        return "Survey not found"
