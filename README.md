@@ -30,6 +30,9 @@ Retrieve a survey by sending the name of the survey. Of course, like every other
 4. Get all surveys
 Retrieve all survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
 
+5. Add a question to a survey
+Add a question to a survey by sending the name of the survey and the question. No more than 10 questions per survey. Of course, like every other part, you have to integrate the tests. Time: **40 min**.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
