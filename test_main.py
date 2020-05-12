@@ -20,3 +20,16 @@ def test_create_survey():
     surveys = MySurveys.GetSurveys()
     assert len(surveys) == 2
     assert surveys[1].name == "Survey Test 8"
+
+def test_get_surveys():
+    MySurveys = Controller()
+    surveys = MySurveys.GetSurveys()
+    assert len(surveys) == 0
+    MySurveys.CreateSurvey("Survey Test 3")
+    MySurveys.CreateSurvey("Survey Test 4")
+    surveys = MySurveys.GetSurveys()
+    assert len(surveys) == 2
+    MySurveys.CreateSurvey("Survey Test 5")
+    MySurveys.CreateSurvey("Survey Test 6")
+    surveys = MySurveys.GetSurveys()
+    assert len(surveys) == 4

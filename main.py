@@ -24,3 +24,6 @@ class Controller:
             if survey.name == surveyName:
                 return survey
         return "Survey not found"
+
+    def GetSurveys(self):
+        return self.surveyList
