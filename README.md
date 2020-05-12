@@ -72,6 +72,16 @@ OUTPUT:
 
     - Array of Class Survey
 
+- **GetSurvey, get a specific survey**. You can also retrieve a specific survey via the GetSurvey function by sending it the name of the survey you want to retrieve:
+```
+    mySurvey = MySurveys.GetSurvey("My new survey name")
+```
+
+OUTPUT:
+
+    - Class Survey, if it works
+    - "Survey not found", if the survey name is unknown
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
