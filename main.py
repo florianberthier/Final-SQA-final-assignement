@@ -64,3 +64,9 @@ class Controller:
             if survey.name == surveyName:
                 return survey.AddResponse(response, user)
         return "Survey not found"
+
+    def GetSurveyStat(self, surveyName):
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                return GetSurveyStatistics(survey)
+        return "Survey not found"
