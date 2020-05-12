@@ -69,5 +69,10 @@ Once again, the challenge of a project is above all teamwork. You must be able t
     git checkout -b [branch-name]
 ```
 
+2. Once the task is finished or you want to submit a progress, you must first of all retrieve the code that's on the dev branch. Other developers have also advanced on their tasks. So you have to get the latest version of the dev branch. To do this you must type the command: 
+```
+    git pull origin dev
+```
+
 ## Code-review checklist
 
