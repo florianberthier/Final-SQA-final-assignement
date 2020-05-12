@@ -4,6 +4,15 @@ class SurveyResponse:
     def __init__(self, user):
         self.user = user
         self.answer = []
+    
+    def AddAnswer(self, answer, nbQuestions):
+        if isinstance(answer, int) == False:
+            return "Invalid answer"
+        if answer < 1 or answer > 5:
+            return "Invalid answer"
+        if len(self.answer) + 1 > nbQuestions:
+            return "No question for this answer"
+        self.answer.append(answer)
 
 class Survey:
     def __init__(self, name):
@@ -18,6 +27,14 @@ class Survey:
             if myQuestion == question:
                 return "Question already exist if this survey"
         self.questions.append(question)
+
+    def AddResponse(self, answer, user):
+        for response in self.responses:
+            if response.user == user:
+                return response.AddAnswer(answer, len(self.questions))
+        response = SurveyResponse(user)
+        self.responses.append(response)
+        return response.AddAnswer(answer, len(self.questions))
 
 class Controller:
     def __init__(self):
@@ -40,4 +57,10 @@ class Controller:
         for survey in self.surveyList:
             if survey.name == surveyName:
                 return survey.AddQuestion(question)
+        return "Survey not found"
+
+    def AddResponse(self, surveyName, response, user):
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                return survey.AddResponse(response, user)
         return "Survey not found"

@@ -61,3 +61,53 @@ def test_add_question():
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 107 for survey 10") == None
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 108 for survey 10") == None
     assert MySurveys.AddQuestion("Survey Test 10", "This is a question 109 for survey 10") == "Limit of 10 questions reached"
+
+def test_add_response():
+    firstUser = 1
+    secondUser = 2
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test 11")
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 0
+    assert MySurveys.AddResponse("Survey Test 11", 2, firstUser) == "No question for this answer"
+    assert MySurveys.AddResponse("Survey Test 11", "invalid response", firstUser) == "Invalid answer"
+    assert MySurveys.AddResponse("Survey Test 11", 10, firstUser) == "Invalid answer"
+    assert MySurveys.AddResponse("Survey Test 11", 0, firstUser) == "Invalid answer"
+    assert MySurveys.AddQuestion("Survey Test 11", "This is a question for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").questions) == 1
+
+    assert MySurveys.AddResponse("Unknow Survey 2", 4, firstUser) == "Survey not found"
+    assert MySurveys.AddResponse("Survey Test 11", 4, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 1
+    assert MySurveys.GetSurvey("Survey Test 11").responses[0].answer[0] == 4
+    assert MySurveys.AddResponse("Survey Test 11", 4, firstUser) == "No question for this answer"
+
+    assert MySurveys.AddQuestion("Survey Test 11", "This is a question 2 for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").questions) == 2
+
+    assert MySurveys.AddResponse("Survey Test 11", 1, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[0].answer[1] == 1
+
+    assert MySurveys.AddResponse("Survey Test 11", 3, secondUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 1
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[0] == 3
+
+    assert MySurveys.AddResponse("Survey Test 11", 4, secondUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[1] == 4
+
+    MySurveys.CreateSurvey("Survey Test 12")
+    assert MySurveys.AddQuestion("Survey Test 12", "This is a question for survey 1") == None
+    assert len(MySurveys.GetSurvey("Survey Test 12").questions) == 1
+
+    assert MySurveys.AddResponse("Survey Test 12", 2, firstUser) == None
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[1].answer) == 2
+    assert len(MySurveys.GetSurvey("Survey Test 11").responses[0].answer) == 2
+    assert MySurveys.GetSurvey("Survey Test 11").responses[1].answer[1] == 4
+    assert len(MySurveys.GetSurvey("Survey Test 12").responses[0].answer) == 1
+    assert MySurveys.GetSurvey("Survey Test 12").responses[0].answer[0] == 2
