@@ -54,6 +54,15 @@ All the functionalities of the project are achievable via the Controller class. 
 ```
 You can then call up the available functions of the controller via this new variable.
 
+- **CreateSurvey, create a new survey**. You have the possibility to create several surveys. To do this you must call the CreateSurvey function:
+```
+    MySurveys.CreateSurvey("My new survey name")
+```
+
+OUTPUT:
+
+    - None, if it works
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
