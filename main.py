@@ -19,6 +19,14 @@ class Survey:
                 return "Question already exist if this survey"
         self.questions.append(question)
 
+    def AddResponse(self, answer, user):
+        for response in self.responses:
+            if response.user == user:
+                return response.AddAnswer(answer, len(self.questions))
+        response = SurveyResponse(user)
+        self.responses.append(response)
+        return response.AddAnswer(answer, len(self.questions))
+
 class Controller:
     def __init__(self):
         self.surveyList = []
