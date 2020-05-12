@@ -39,6 +39,9 @@ Add a response to a survey by sending the name of the survey, the response and a
 7. Get a survey statistics
 Calculate and return the statistics of a survey. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **35 min**.
 
+8. Get a question statistics
+Calculate and return the statistics of a survey question. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **20 min**.
+
 ## Project Documentation
 
 ## Unit testing and Test-Driven development
