@@ -63,6 +63,15 @@ OUTPUT:
 
     - None, if it works
 
+- **GetSurveys, get the list of all created surveys**. You can also retrieve all created surveys via the GetSurveys function:
+```
+    allMySurveys = MySurveys.GetSurveys()
+```
+
+OUTPUT:
+
+    - Array of Class Survey
+
 ## Unit testing and Test-Driven development
 
 Testing is the basis of a successful project. It is imperative that you provide tests for each of your code additions. The tests must be complete, i.e. test all possible cases. The name of the test should be the same as the name of the function being tested to simplify the work of other developers. In our example project, the basic python tool py.test is used. To start the test series, run the command:
