@@ -4,6 +4,9 @@ class SurveyResponse:
     def __init__(self, user):
         self.user = user
         self.answer = []
+    
+    def AddAnswer(self, answer, nbQuestions):
+        self.answer.append(answer)
 
 class Survey:
     def __init__(self, name):
