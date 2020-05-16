@@ -156,7 +156,7 @@ Test-Driven development is a development method that aims to reduce the anomalie
 
 ## Test Coverage Metric
 
-Test coverage is a measure used to determine the rate of source code executed when a test suite is run. In an attempt to limit bugs, tests should cover a large proportion of code. It can show which parts of your code are being exercised by tests, and which are not. Pour ce projet, la couverture de test est mesurée avec l'outil python **Coverage.py**. Let's start by seeing how this tool works:
+Test coverage is a measure used to determine the rate of source code executed when a test suite is run. In an attempt to limit bugs, tests should cover a large proportion of code. It can show which parts of your code are being exercised by tests, and which are not. For this project, the test coverage is measured with the python tool **Coverage.py**. Let's start by seeing how this tool works:
 
 For installation, you will need the python [**pip**](https://pypi.org/project/pip/) package manager. I leave it to you to install it if you haven't already done so.
 
