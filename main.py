@@ -97,6 +97,12 @@ class Survey:
         response = SurveyResponse(user)
         self.responses.append(response)
         return response.AddAnswer(answer, len(self.questions))
+    
+    def GetResponses(self):
+        result = []
+        for response in self.responses:
+            result.append(response.answer)
+        return result
 
 class Controller:
     def __init__(self):
