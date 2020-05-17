@@ -112,6 +112,69 @@ def test_add_response():
     assert len(MySurveys.GetSurvey("Survey Test 12").responses[0].answer) == 1
     assert MySurveys.GetSurvey("Survey Test 12").responses[0].answer[0] == 2
 
+
+def test_get_survey_responses():
+    firstUser = 1
+    secondUser = 2
+    thirdUser = 3
+    MySurveys = Controller()
+    MySurveys.CreateSurvey("Survey Test new")
+    assert MySurveys.AddQuestion("Survey Test new", "This is a question for survey new") == None
+    assert MySurveys.AddQuestion("Survey Test new", "This is a question 2 for survey new") == None
+    assert len(MySurveys.GetSurvey("Survey Test new").questions) == 2
+
+    assert MySurveys.AddResponse("Survey Test new", 4, firstUser) == None
+    assert MySurveys.AddResponse("Survey Test new", 2, firstUser) == None
+
+    assert MySurveys.GetSurveyResponses("Unknow") == "Survey not found"
+
+    responses = MySurveys.GetSurveyResponses("Survey Test new")
+    assert len(responses) == 1
+    assert len(responses[0]) == 2
+    assert responses[0][0] == 4
+    assert responses[0][1] == 2
+
+    assert MySurveys.AddResponse("Survey Test new", 1, secondUser) == None
+
+    responses = MySurveys.GetSurveyResponses("Survey Test new")
+    assert len(responses) == 2
+    assert len(responses[0]) == 2
+    assert responses[0][0] == 4
+    assert responses[0][1] == 2
+
+    assert len(responses[1]) == 1
+    assert responses[1][0] == 1
+
+    assert MySurveys.AddResponse("Survey Test new", 5, secondUser) == None
+
+    responses = MySurveys.GetSurveyResponses("Survey Test new")
+    assert len(responses) == 2
+    assert len(responses[0]) == 2
+    assert responses[0][0] == 4
+    assert responses[0][1] == 2
+
+    assert len(responses[1]) == 2
+    assert responses[1][0] == 1
+    assert responses[1][1] == 5
+
+    assert MySurveys.AddResponse("Survey Test new", 2, thirdUser) == None
+    assert MySurveys.AddResponse("Survey Test new", 3, thirdUser) == None
+
+    responses = MySurveys.GetSurveyResponses("Survey Test new")
+    assert len(responses) == 3
+    assert len(responses[0]) == 2
+    assert responses[0][0] == 4
+    assert responses[0][1] == 2
+
+    assert len(responses[1]) == 2
+    assert responses[1][0] == 1
+    assert responses[1][1] == 5
+
+    assert len(responses[2]) == 2
+    assert responses[2][0] == 2
+    assert responses[2][1] == 3
+
+
 def test_get_survey_stat():
     firstUser = 1
     secondUser = 2

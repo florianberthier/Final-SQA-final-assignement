@@ -97,6 +97,12 @@ class Survey:
         response = SurveyResponse(user)
         self.responses.append(response)
         return response.AddAnswer(answer, len(self.questions))
+    
+    def GetResponses(self):
+        result = []
+        for response in self.responses:
+            result.append(response.answer)
+        return result
 
 class Controller:
     def __init__(self):
@@ -125,6 +131,12 @@ class Controller:
         for survey in self.surveyList:
             if survey.name == surveyName:
                 return survey.AddResponse(response, user)
+        return "Survey not found"
+
+    def GetSurveyResponses(self, surveyName):
+        for survey in self.surveyList:
+            if survey.name == surveyName:
+                return survey.GetResponses()
         return "Survey not found"
 
     def GetSurveyStat(self, surveyName):
