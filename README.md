@@ -85,7 +85,7 @@ OUTPUT:
     - Class Survey, if it works
     - "Survey not found", if the survey name is unknown
 
-- **AddQuestion, add a question to a specific survey**. You can add questions to your survey via the AddQuestion function by sending it the name of the survey and the question. A survey is limited to a maximum of 10 questions:
+- **AddQuestion, add a question from a specific survey**. You can add questions to your survey via the AddQuestion function by sending it the name of the survey and the question. A survey is limited to a maximum of 10 questions:
 ```
     MySurveys.AddQuestion("My new survey name", "My question")
 ```
@@ -97,7 +97,7 @@ OUTPUT:
     - "Question already exist if this survey", if the question is already associated to this survey
     - "Limit of 10 questions reached", if the survey's question limit is reached (10 questions)
 
-- **AddResponse, add a response to a specific survey**. You can add responses to your survey via the AddResponse function by sending it the name of the survey and the response. The response must be a number between 1 and 5. You cannot add answers if there are no questions in your survey. You also need to send a user ID to be able to differentiate the answers between each person:
+- **AddResponse, add a response from a specific survey**. You can add responses to your survey via the AddResponse function by sending it the name of the survey and the response. The response must be a number between 1 and 5. You cannot add answers if there are no questions in your survey. You also need to send a user ID to be able to differentiate the answers between each person:
 ```
     MySurveys.AddResponse("My new survey name", 2[response], 1[userID])
 ```
@@ -108,6 +108,16 @@ OUTPUT:
     - "Survey not found", if the survey name is unknown
     - "No question for this answer", if there are less questions than response for this user
     - "Invalid answer", if the answer is not valid (between 1 and 5)
+
+- **GetSurveyResponses, get responses from a specific survey**. Get all surveyResponses from a specific survey by sending it the name of the survey:
+```
+    MySurveys.GetSurveyResponses("My new survey name")
+```
+
+OUTPUT:
+
+    - 2 dimension Array of integers, example: [[1, 4], [2, 3]], each sub array correspond to the answer of a user
+    - "Survey not found", if the survey name is unknown
 
 - **GetSurveyStat, get the survey's statistics**. You can retrieve the statistics of a specific survey by using the GetSurveyStat function and sending it the name of the survey. The statistics include the min score, max score, average score and standard deviation of the scores. A survey score is obtained by summing all the responses of a user: 
 ```
