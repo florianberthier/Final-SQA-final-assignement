@@ -18,31 +18,31 @@ Today's software applications are increasingly complex, often operating in multi
 
 ## Sprint backlog and task estimation
 
-1. Project structure
+1. Project structure,
 Imagine and create the structure of the project with all the classes and variables that will have to be present for the project. Time: **2 hours**.
 
-2. Create a survey
+2. Create a survey,
 Create the survey creation method. Of course, like every other part, you have to integrate the tests. Time: **25 min**.
 
-3. Get a survey
+3. Get a survey,
 Retrieve a survey by sending the name of the survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
 
-4. Get all surveys
+4. Get all surveys,
 Retrieve all survey. Of course, like every other part, you have to integrate the tests. Time: **15 min**.
 
-5. Add a question to a survey
+5. Add a question to a survey,
 Add a question to a survey by sending the name of the survey and the question. No more than 10 questions per survey. Of course, like every other part, you have to integrate the tests. Time: **40 min**.
 
-6. Add a response to a survey
+6. Add a response to a survey,
 Add a response to a survey by sending the name of the survey, the response and a userID.  It should not be possible to add an answer if there is no associated question. The answer must be a number between 1 and 5. Answers must be stored in relation to the user ID. Of course, like every other part, you have to integrate the tests. Time: **60 min**.
 
-6. Get all survey responses
+6. Get all survey responses,
 Get all responses of all users. Answer must be stored in an array of user's responses. User's responses will be also stored in an array. Of course, like every other part, you have to integrate the tests. Time: **30 min**.
 
-7. Get a survey statistics
+7. Get a survey statistics,
 Calculate and return the statistics of a survey. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **35 min**.
 
-8. Get a question statistics
+8. Get a question statistics,
 Calculate and return the statistics of a survey question. The statistics include a min, max, mean and standard deviation. Of course, like every other part, you have to integrate the tests. Time: **20 min**.
 
 Estimating the duration of a task can be difficult. In the case of this project, the first task is one that will require more reflection than the others. The challenge of this task is to think carefully about the structure of the project and to code a solid foundation. The time allowed may seem long, but it is time to save for the next tasks. It is better to spend more time thinking and less time coding. Contrary to this task, the next 3 tasks should not take too much time. It is simply a matter of returning known values. However, you have to take into account the time needed to create the tests. The last two tasks have a different time estimation because we will be able to reuse the code from the last but one task in the last one.
